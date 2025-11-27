@@ -1,0 +1,1358 @@
+Delivered-To: test@gmail.com
+Received: by 2002:a05:6022:329e:b0:e5:9480:e2a5 with SMTP id bw30csp4161432lab;
+        Thu, 27 Nov 2025 03:15:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEzj3fv8t60os8hf94wdJA2LLxa1EDAY/ahqCMsy7ht8e5lku/BaOoRR6Q13kGX/PsvJkiN
+X-Received: by 2002:a05:690e:40b:b0:642:84a:7ba4 with SMTP id 956f58d0204a3-64302b50b12mr11947304d50.85.1764242114080;
+        Thu, 27 Nov 2025 03:15:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1764242114; cv=none;
+        d=google.com; s=arc-20240605;
+        b=UAMeipV4uiC5xob+zY+N8GZzAaBCzvdtGfx6NtwymBe1G0UhLAdQlJ4LWq/ULtHK9d
+         HJ7GY2iJyllOHMkPyueJu60unRZVLcNpsaymgKkzGf8pnPptEnVK3JZTD5ksNncRSEhs
+         ot/CL8uOfyIeOV8f6y+MP0Jot4NK3juB97sFb1LFfhQ3/nToZpDO3JMdo9Lj27HqVlCA
+         ZV/S2WBnecg+RPC6mnWtw1eehOPF6s03WiQU/NHbkrypik5kBiFc10b636OVjb7bpsCJ
+         0m0CPkmhV292N4EBBy2lHq5+o7pC1zvdihWe4/577nzLnHfp7TCCEBET3kYUt5kBEtMw
+         wG3A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :dkim-signature;
+        bh=vktq+pOEtWqXt/TrB0oUr3u39b69YWJ8IS2LOA7Vk1U=;
+        fh=JYYeIMwjWSE89zwUuK8xMjI2AqYMIsseItC/n9kwCkU=;
+        b=DbD/NsxwwXn70bHJlZlYcTQN1eUduKervT8tUuzIDWLIkGlispotXNFFQ7ANtI2CuH
+         jvv8cUsI3TYC976TA3AWXxaSmTj+ueeQOJrYScqAmxrYYovIK7OVtzcmiexsQmAl6or1
+         9YDM7VBQqcPOM3SUEwMsRoUPzGUnIzuDES9FKkBaf/3Jdr08E41X2/9r7y4PH6pZhZF+
+         KlhWvUkzyPf+fS8o1rMRz/5h2vz02b1BbMs8NkqNOPWujYJlVep313ST0K5swo466b7w
+         /3MtvPv+7kzKQ9r/jTjE7BtxFhUfoHh8B+873ofQjfyZLT+m0pGzA7EyWUVRzdcedcN+
+         Cl9A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k2 header.b=pR97IFIt;
+       dkim=pass header.i=@cryptoquant.com header.s=k3 header.b=qmlxZNoj;
+       spf=pass (google.com: domain of bounce-mc.us4_132539922.17386584-5b5cc37f4b@mail20.atl91.mcsv.net designates 198.2.130.20 as permitted sender) smtp.mailfrom=bounce-mc.us4_132539922.17386584-5b5cc37f4b@mail20.atl91.mcsv.net;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=cryptoquant.com
+Return-Path: <bounce-mc.us4_132539922.17386584-5b5cc37f4b@mail20.atl91.mcsv.net>
+Received: from mail20.atl91.mcsv.net (mail20.atl91.mcsv.net. [198.2.130.20])
+        by mx.google.com with ESMTPS id 00721157ae682-78ad0d566ecsi6103517b3.8.2025.11.27.03.15.13
+        for <test@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 27 Nov 2025 03:15:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-mc.us4_132539922.17386584-5b5cc37f4b@mail20.atl91.mcsv.net designates 198.2.130.20 as permitted sender) client-ip=198.2.130.20;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k2 header.b=pR97IFIt;
+       dkim=pass header.i=@cryptoquant.com header.s=k3 header.b=qmlxZNoj;
+       spf=pass (google.com: domain of bounce-mc.us4_132539922.17386584-5b5cc37f4b@mail20.atl91.mcsv.net designates 198.2.130.20 as permitted sender) smtp.mailfrom=bounce-mc.us4_132539922.17386584-5b5cc37f4b@mail20.atl91.mcsv.net;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=cryptoquant.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.mcsv.net;
+	s=k2; t=1764241604; x=1764328004;
+	bh=vktq+pOEtWqXt/TrB0oUr3u39b69YWJ8IS2LOA7Vk1U=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=pR97IFItjallEFMScJ0YjQd3VQrxmQm4RRa9h3ZtrCvVnsI6ws1Vm/gSH6XjIx/US
+	 1xZ9L/+SOM1T93+v9+2exr9sd/hWmLdTMEYTFTpf0RYHabbPmkL+VQBe0kmsyIOsUU
+	 b7jeUq2TKV5H8zJIKCARYcwq1k3yXFGlJA+YDq6AviuRIcD/SGfo0B8uXlmA6mWjow
+	 U0HzB/psU0Z5zqktvD+RrspG7i5sLa3Xqv84yYQxLSu77rfEHkxKQ7kKNeDnOWrECj
+	 ca3Apcz9OMQhRkMwHLP0hKawnoMw+ZkuYBkpeu39ITTyX3iPNFvFzq6HfI8/92GAYZ
+	 asRGh5EcGOxDQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cryptoquant.com;
+	s=k3; t=1764241604; x=1764511604; i=nick@cryptoquant.com;
+	bh=vktq+pOEtWqXt/TrB0oUr3u39b69YWJ8IS2LOA7Vk1U=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=qmlxZNojM+Dz5qlaUpSQr9wbzSUCV3zSw1n8fM4w5ZelqHfqqy7ceof+Xt0A5iQ4a
+	 nQ+FDKPWY+LlzJWUTxVOCAMC4VQQ4QgwmsN1oAsO+4R97o0MVcvABq2ZMH9qX6EAGI
+	 G1wtRiRaatpJDsiV6pE1Cy9M9+49DHsxqpU2gRA9+jXrpxP5egqhX2VXWq/LV1tiSV
+	 MThBRL8U93Kzl00h0k/1l5tpUq5RNN04q2doyLt7O4z6qWncsunpsKgi+p5TFmjFpG
+	 +yQOZjl+QEm30XjLXCCFDU4WXCOqCxHl32/xqEYAnvBnziZTD54rzrhYDZJxCwHrIe
+	 CzSieq+uuDbfw==
+Received: from localhost (localhost [127.0.0.1])
+	by mail20.atl91.mcsv.net (Mailchimp) with ESMTP id 4dHDC81tn5zQY5syh
+	for <test@gmail.com>; Thu, 27 Nov 2025 11:06:44 +0000 (GMT)
+Subject: =?utf-8?Q?Exchange=20Pressure?=
+From: Nick from CryptoQuant <nick@cryptoquant.com>
+Reply-To:  <us4-66851fdb3c-cca5ad9774@inbound.mailchimpapp.net>
+To: =?utf-8?Q?globsecure?= <test@gmail.com>
+Date: Thu, 27 Nov 2025 11:06:33 +0000
+Message-ID: <194ac041bb7af11b2a3017080.5b5cc37f4b.20251127110624.51af43e758.0957dc3c@mail20.atl91.mcsv.net>
+X-Mailer: Mailchimp Mailer - **CID51af43e7585b5cc37f4b**
+X-Campaign: mailchimp194ac041bb7af11b2a3017080.51af43e758
+X-campaignid: mailchimp194ac041bb7af11b2a3017080.51af43e758
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=194ac041bb7af11b2a3017080&id=51af43e758&e=5b5cc37f4b
+X-MC-User: 194ac041bb7af11b2a3017080
+Feedback-ID: 132539922:132539922.17386584:us4:mc
+List-ID: 194ac041bb7af11b2a3017080mc list <194ac041bb7af11b2a3017080.385219.list-id.mcsv.net>
+X-Accounttype: pr
+List-Unsubscribe: <https://cryptoquant.us4.list-manage.com/unsubscribe?u=194ac041bb7af11b2a3017080&id=a30940cf31&t=h&e=5b5cc37f4b&c=51af43e758>, <mailto:unsubscribe-mc.us4_194ac041bb7af11b2a3017080.51af43e758-5b5cc37f4b@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_1464743364"
+MIME-Version: 1.0
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_1464743364
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+https://nexo.go.link/jSCz4?utm_source=3DCryptoQuant+Subscribers+API&utm_ca=
+mpaign=3D51af43e758-EMAIL_CAMPAIGN_2024_09_26_09_11_COPY_01&utm_medium=3De=
+mail&utm_term=3D0_-e6fa94a784-389591255&mc_cid=3D51af43e758&mc_eid=
+=3DUNIQID
+
+Grow your BTC=2C ETH=2C and XRP wealth with Nexo (https://nexo.go.link/3a4=
+8h?utm_source=3DCryptoQuant+Subscribers+API&utm_campaign=3D51af43e758-EMAI=
+L_CAMPAIGN_2024_09_26_09_11_COPY_01&utm_medium=3Demail&utm_term=3D0_-e6fa9=
+4a784-389591255&mc_cid=3D51af43e758&mc_eid=3DUNIQID)
+
+
+** Exchange Pressure
+------------------------------------------------------------
+https://cryptoquant.com/insights/research/6927264684244e57ffb32238-26-Nove=
+mber-2025-Under-Pressure%C2%A0Large-Players-are-Sending-Increasing-Amounts=
+-of-?utm_source=3Dmailchimp&utm_medium=3Dnewsletter&utm_campaign=3Dresearc=
+h&utm_content=3Dcrypto-weekly-report&utm_source=3DCryptoQuant+Subscribers+=
+API&utm_campaign=3D51af43e758-EMAIL_CAMPAIGN_2024_09_26_09_11_COPY_01&utm_=
+medium=3Demail&utm_term=3D0_-e6fa94a784-389591255&mc_cid=3D51af43e75=
+8&mc_eid=3DUNIQID
+
+Bitcoin fell to a seven-month low of ~$80K last week=2C and on-chain data=
+ shows exchange deposits rising across the board.
+
+Large traders and long-term holders have increased their activity=2C a tre=
+nd that could keep pressure on prices if it continues.
+
+Bitcoin exchange inflows climbed as the price dropped to ~87K. Total BTC s=
+ent to exchanges hit 9K on November 21=2C with 45% coming from large depos=
+its of 100 BTC or more. The average BTC deposit value also jumped to 1.23=
+ BTC=2C the highest in a year.
+
+Ethereum shows a similar pattern. Large deposits now dominate inflows=2C a=
+nd the average deposit value surged to 41.7 ETH=2C a three-year high=2C as=
+ ETH fell toward $2.9K.
+
+Get the full insight in our latest report.
+=F0=9F=91=89 Explore the Details (https://cryptoquant.com/insights/researc=
+h/6927264684244e57ffb32238-26-November-2025-Under-Pressure%C2%A0Large-Play=
+ers-are-Sending-Increasing-Amounts-of-?utm_source=3Dmailchimp&utm_medium=
+=3Dnewsletter&utm_campaign=3Dresearch&utm_content=3Dcrypto-weekly-report&u=
+tm_source=3DCryptoQuant+Subscribers+API&utm_campaign=3D51af43e758-EMAIL_CA=
+MPAIGN_2024_09_26_09_11_COPY_01&utm_medium=3Demail&utm_term=3D0_-e6fa94a78=
+4-389591255&mc_cid=3D51af43e758&mc_eid=3DUNIQID)
+
+
+** Black Friday
+------------------------------------------------------------
+https://cryptoquant.com/promotion?utm_source=3Dmailchimp&utm_medium=3Dnews=
+letter&utm_campaign=3Dpromotion&utm_content=3Dblack-friday&utm_term=3Demai=
+l&utm_source=3DCryptoQuant+Subscribers+API&utm_campaign=3D51af43e758-EMAIL=
+_CAMPAIGN_2024_09_26_09_11_COPY_01&utm_medium=3Demail&utm_term=3D0_-e6fa94=
+a784-389591255&mc_cid=3D51af43e758&mc_eid=3DUNIQID
+
+Black Friday is live. This is our biggest discount of the year.
+
+For a limited time=2C you can get up to 40% off CryptoQuant Advanced and P=
+rofessional plans.
+
+What you get:
+* 200+ Bitcoin and Ethereum on-chain indicators
+* Exchange-level data
+* Access to Research Reports
+* Featured indicators for 50+ altcoins
+* ProChart with full historical access
+* API built for algo traders=2C bot developers=2C and analysts
+* Faster research with alerts=2C dashboards=2C and long-term data
+
+If you=E2=80=99ve been waiting to upgrade=2C this is the moment.
+
+Save 40% today and level up your on-chain analysis.
+=F0=9F=91=89 Get the Offer (https://cryptoquant.com/promotion?utm_source=
+=3Dmailchimp&utm_medium=3Dnewsletter&utm_campaign=3Dpromotion&utm_content=
+=3Dblack-friday&utm_term=3Demail&utm_source=3DCryptoQuant+Subscribers+API&=
+utm_campaign=3D51af43e758-EMAIL_CAMPAIGN_2024_09_26_09_11_COPY_01&utm_medi=
+um=3Demail&utm_term=3D0_-e6fa94a784-389591255&mc_cid=3D51af43e758&mc=
+_eid=3DUNIQID)
+
+Nexo and the DP World Tour (https://x.com/Nexo/status/1940329691455660274?=
+utm_source=3DCryptoQuant+Subscribers+API&utm_campaign=3D51af43e758-EMAIL_C=
+AMPAIGN_2024_09_26_09_11_COPY_01&utm_medium=3Demail&utm_term=3D0_-e6fa94a7=
+84-389591255&mc_cid=3D51af43e758&mc_eid=3DUNIQID) partner to drive a=
+ new form of wealth creation for the next generation of investors. Want in=
+? Start building today.
+Join Nexo (https://nexo.go.link/3a48h?utm_source=3DCryptoQuant+Subscribers=
++API&utm_campaign=3D51af43e758-EMAIL_CAMPAIGN_2024_09_26_09_11_COPY_01&utm=
+_medium=3Demail&utm_term=3D0_-e6fa94a784-389591255&mc_cid=3D51af43e7=
+58&mc_eid=3DUNIQID)
+
+
+** =F0=9F=93=8C Further Notice
+------------------------------------------------------------
+1. More details are in the CryptoQuant User Guide (https://userguide.crypt=
+oquant.com/what-is-cryptoquant/our-product?utm_source=3Dmailchimp&utm_medi=
+um=3Donboard&utm_campaign=3Duserguide&utm_content=3Db2c-newsletter&utm_ter=
+m=3Dweekly-review&utm_source=3DCryptoQuant+Subscribers+API&utm_campaign=3D=
+51af43e758-EMAIL_CAMPAIGN_2024_09_26_09_11_COPY_01&utm_medium=3Demail&utm_=
+term=3D0_-e6fa94a784-389591255&mc_cid=3D51af43e758&mc_eid=3DUNIQID)
+2. The content is for informational purposes only=2C you should not constr=
+ue any such information or other material as legal=2C tax=2C investment=2C=
+ financial=2C or other advice.
+
+Kind regards=2C
+
+Nick Pitto | Head of Marketing | CryptoQuant
+
+Data usage guides and various benefits will be delivered via e-mail. If yo=
+u don't want to get data-driven insights from us again=2C unsubscribe (htt=
+ps://cryptoquant.us4.list-manage.com/unsubscribe?u=3D194ac041bb7af11b2a301=
+7080&id=3Da30940cf31&t=3Db&e=3D5b5cc37f4b&c=3D51af43e758) .
+https://t.me/cryptoquant_official?utm_source=3DCryptoQuant+Subscribers+API=
+&utm_campaign=3D51af43e758-EMAIL_CAMPAIGN_2024_09_26_09_11_COPY_01&utm_med=
+ium=3Demail&utm_term=3D0_-e6fa94a784-389591255&mc_cid=3D51af43e758&m=
+c_eid=3DUNIQID
+https://www.linkedin.com/company/crypto-quant?utm_source=3DCryptoQuant+Sub=
+scribers+API&utm_campaign=3D51af43e758-EMAIL_CAMPAIGN_2024_09_26_09_11_COP=
+Y_01&utm_medium=3Demail&utm_term=3D0_-e6fa94a784-389591255&mc_cid=3D=
+51af43e758&mc_eid=3DUNIQID
+https://twitter.com/cryptoquant_com?utm_source=3DCryptoQuant+Subscribers+A=
+PI&utm_campaign=3D51af43e758-EMAIL_CAMPAIGN_2024_09_26_09_11_COPY_01&utm_m=
+edium=3Demail&utm_term=3D0_-e6fa94a784-389591255&mc_cid=3D51af43e758=
+&mc_eid=3DUNIQID
+https://www.youtube.com/@cryptoquant?utm_source=3DCryptoQuant+Subscribers+=
+API&utm_campaign=3D51af43e758-EMAIL_CAMPAIGN_2024_09_26_09_11_COPY_01&utm_=
+medium=3Demail&utm_term=3D0_-e6fa94a784-389591255&mc_cid=3D51af43e75=
+8&mc_eid=3DUNIQID
+
+https://www.cryptoquant.com/?utm_source=3Dmailchimp&utm_medium=3Donboard&u=
+tm_campaign=3Dwebsite&utm_content=3Db2c-automation&utm_source=3DCryptoQuan=
+t+Subscribers+API&utm_campaign=3D51af43e758-EMAIL_CAMPAIGN_2024_09_26_09_1=
+1_COPY_01&utm_medium=3Demail&utm_term=3D0_-e6fa94a784-389591255&mc_c=
+id=3D51af43e758&mc_eid=3DUNIQID
+
+Lowering the hurdles of data-driven investment decisions. Explore our webs=
+ite (https://cryptoquant.com/?utm_source=3DCryptoQuant+Subscribers+API&utm=
+_campaign=3D51af43e758-EMAIL_CAMPAIGN_2024_09_26_09_11_COPY_01&utm_medium=
+=3Demail&utm_term=3D0_-e6fa94a784-389591255&mc_cid=3D51af43e758&mc_e=
+id=3DUNIQID)
+
+Update your preferences (https://cryptoquant.us4.list-manage.com/profile?u=
+=3D194ac041bb7af11b2a3017080&id=3Da30940cf31&e=3D5b5cc37f4b&c=3D51af43e758)=
+ or Unsubscribe (https://cryptoquant.us4.list-manage.com/unsubscribe?u=3D1=
+94ac041bb7af11b2a3017080&id=3Da30940cf31&t=3Db&e=3D5b5cc37f4b&c=3D51af43e758=
+)
+
+=C2=A9 Team CQ=2C Inc. All rights reserved
+Team CQ=2C Inc . 30 Wall St Fl 8 . New York=2C NY 10005-2205 . USA
+--_----------=_MCPart_1464743364
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn=
+:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:of=
+fice"><head><meta name=3D"twitter:image:src" content=3D"https://mcusercont=
+ent.com/194ac041bb7af11b2a3017080/images/799b2ab9-1652-0c2e-0c13-0fe2117ad=
+7e0.png"><meta name=3D"twitter:description" content=3D"Large holders are i=
+ncreasing exchange deposits across BTC=2C ETH=2C and Altcoins as prices dr=
+op. This trend could reinforce the current downtrend."><meta name=3D"twitt=
+er:title" content=3D"Exchange Pressure"><meta name=3D"twitter:card" conten=
+t=3D"summary_large_image"><meta property=3D"og:type" content=3D"article"><=
+meta property=3D"og:description" content=3D"Large holders are increasing e=
+xchange deposits across BTC=2C ETH=2C and Altcoins as prices drop. This tr=
+end could reinforce the current downtrend."><meta property=3D"og:image" co=
+ntent=3D"https://mcusercontent.com/194ac041bb7af11b2a3017080/images/799b2a=
+b9-1652-0c2e-0c13-0fe2117ad7e0.png"><meta property=3D"og:title" content=3D=
+"Exchange Pressure"><meta property=3D"og:url" content=3D"http://eepurl.com=
+/js5Tus">
+<!--[if gte mso 15]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<meta charset=3D"UTF-8">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial-scale=
+=3D1">
+<title>Exchange Pressure</title>
+<link rel=3D"preconnect" href=3D"https://fonts.googleapis.com">
+<link rel=3D"preconnect" href=3D"https://fonts.gstatic.com" crossorigin=3D=
+"">
+<!--[if !mso]><!--><link rel=3D"stylesheet" type=3D"text/css" id=3D"newGo=
+ogleFontsStatic" href=3D"https://fonts.googleapis.com/css?family=3DRoboto:=
+400=2C400i=2C700=2C700i=2C900=2C900i"><!--<![endif]--><style>img{-ms-inte=
+rpolation-mode:bicubic;}
+table=2C td{mso-table-lspace:0pt;mso-table-rspace:0pt;}
+=2EmceStandardButton=2C .mceStandardButton td=2C .mceStandardButton td a{mso=
+-hide:all!important;}
+p=2C a=2C li=2C td=2C blockquote{mso-line-height-rule:exactly;}
+p=2C a=2C li=2C td=2C body=2C table=2C blockquote{-ms-text-size-adjust:100=
+%;-webkit-text-size-adjust:100%;}
+=2EmcnPreviewText{display:none!important;}
+=2EbodyCell{margin:0 auto;padding:0;width:100%;}
+=2EExternalClass=2C .ExternalClass p=2C .ExternalClass td=2C .ExternalClass=
+ div=2C .ExternalClass span=2C .ExternalClass font{line-height:100%;}
+=2EReadMsgBody=2C .ExternalClass{width:100%;}
+a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!im=
+portant;font-size:inherit!important;font-family:inherit!important;font-wei=
+ght:inherit!important;line-height:inherit!important;}
+body{height:100%;margin:0;padding:0;width:100%;background:#ffffff;}
+p{margin:0;padding:0;}
+table{border-collapse:collapse;}
+td=2C p=2C a{word-break:break-word;}
+h1=2C h2=2C h3=2C h4=2C h5=2C h6{display:block;margin:0;padding:0;}
+img=2C a img{border:0;height:auto;outline:none;text-decoration:none;}
+a[href^=3D"tel"]=2C a[href^=3D"sms"]{color:inherit;cursor:default;text-d=
+ecoration:none;}
+=2EmceColumn .mceButtonLink=2C
+            .mceColumn-1 .mceButtonLink=2C
+            .mceColumn-2 .mceButtonLink=2C
+            .mceColumn-3 .mceButtonLink=2C
+            .mceColumn-4 .mceButtonLink{min-width:30px;}
+div[contenteditable=3D"true"]{outline:0;}
+=2EmceImageBorder{display:inline-block;}
+=2EmceImageBorder img{border:0!important;}
+body=2C #bodyTable{background-color:rgb(255=2C 255=2C 255);}
+=2EmceText=2C .mcnTextContent=2C .mceLabel{font-family:Roboto=2C "Helvetica=
+ Neue"=2C Helvetica=2C Arial=2C sans-serif;}
+=2EmceText=2C .mcnTextContent=2C .mceLabel{color:rgb(18=2C 18=2C 20);}
+=2EmceText h1=2C .mceText h2=2C .mceText p=2C .mceText ol=2C .mceText ul=2C=
+ .mceText label=2C .mceText input{margin-bottom:0;}
+=2EmceSpacing-24 .mceInput + .mceErrorMessage{margin-top:-12px;}
+=2EmceSpacing-12 .mceInput + .mceErrorMessage{margin-top:-6px;}
+=2EmceInput{background-color:transparent;border:2px solid rgb(208=2C 208=2C=
+ 208);width:60%;color:rgb(77=2C 77=2C 77);display:block;}
+=2EmceInput[type=3D"radio"]=2C .mceInput[type=3D"checkbox"]{float:left;mar=
+gin-right:12px;display:inline;width:auto!important;}
+=2EmceLabel > .mceInput{margin-bottom:0;margin-top:2px;}
+=2EmceLabel{display:block;}
+=2EmceText p=2C .mcnTextContent p{color:rgb(18=2C 18=2C 20);font-family:Robo=
+to=2C "Helvetica Neue"=2C Helvetica=2C Arial=2C sans-serif;font-size:16px;=
+font-weight:normal;line-height:1.5;mso-line-height-alt:150%;text-align:lef=
+t;letter-spacing:0;direction:ltr;margin:0;}
+=2EmceText h1=2C .mcnTextContent h1{color:rgb(18=2C 18=2C 20);font-family:Ro=
+boto=2C "Helvetica Neue"=2C Helvetica=2C Arial=2C sans-serif;font-size:26p=
+x;font-weight:bold;line-height:1.5;mso-line-height-alt:150%;text-align:lef=
+t;letter-spacing:0;direction:ltr;}
+=2EmceText h2=2C .mcnTextContent h2{color:rgb(18=2C 18=2C 20);font-family:Ro=
+boto=2C "Helvetica Neue"=2C Helvetica=2C Arial=2C sans-serif;font-size:24p=
+x;font-weight:bold;line-height:1.5;mso-line-height-alt:150%;text-align:lef=
+t;letter-spacing:0;direction:ltr;}
+=2EmceText a=2C .mcnTextContent a{color:rgb(79=2C 55=2C 228);font-style:norm=
+al;font-weight:normal;text-decoration:underline;direction:ltr;}
+p.mcePastedContent=2C h1.mcePastedContent=2C h2.mcePastedContent=2C h3.mce=
+PastedContent=2C h4.mcePastedContent{text-align:left;}
+#d18 p=2C #d18 h1=2C #d18 h2=2C #d18 h3=2C #d18 h4=2C #d18 ul{text-align:c=
+enter;}
+@media only screen and (max-width: 480px) {
+body=2C table=2C td=2C p=2C a=2C li=2C blockquote{-webkit-text-size-adjust=
+:none!important;}
+body{width:100%!important;min-width:100%!important;}
+body.mobile-native{-webkit-user-select:none;user-select:none;transition:tr=
+ansform 0.2s ease-in;transform-origin:top center;}
+colgroup{display:none;}
+=2EmceLogo img=2C .mceImage img=2C .mceSocialFollowIcon img{height:auto!impo=
+rtant;}
+=2EmceWidthContainer{max-width:660px!important;}
+=2EmceColumn=2C .mceColumn-2{display:block!important;width:100%!important;}
+=2EmceColumn-forceSpan{display:table-cell!important;width:auto!important;}
+=2EmceColumn-forceSpan .mceButton a{min-width:0!important;}
+=2EmceReverseStack{display:table;width:100%;}
+=2EmceColumn-1{display:table-footer-group;width:100%!important;}
+=2EmceColumn-3{display:table-header-group;width:100%!important;}
+=2EmceColumn-4{display:table-caption;width:100%!important;}
+=2EmceKeepColumns .mceButtonLink{min-width:0;}
+=2EmceBlockContainer=2C .mceSpacing-24{padding-right:16px!important;padding-=
+left:16px!important;}
+=2EmceBlockContainerE2E{padding-right:0;padding-left:0;}
+=2EmceImage=2C .mceLogo{width:100%!important;height:auto!important;}
+=2EmceText img{max-width:100%!important;}
+=2EmceFooterSection .mceText=2C .mceFooterSection .mceText p{font-size:16px!=
+important;line-height:140%!important;}
+=2EmceText p{margin:0;font-size:16px!important;line-height:1.5!important;mso=
+-line-height-alt:150%;}
+=2EmceText h1{font-size:31px!important;line-height:1.5!important;mso-line-he=
+ight-alt:150%;}
+=2EmceText h2{font-size:25px!important;line-height:1.5!important;mso-line-he=
+ight-alt:150%;}
+=2EbodyCell{padding-left:16px!important;padding-right:16px!important;}
+=2EmceButtonContainer{width:fit-content!important;max-width:fit-content!impo=
+rtant;}
+=2EmceButtonLink{padding:18px 28px!important;font-size:16px!important;}
+=2EmceDividerContainer{width:100%!important;}
+#b4 .mceTextBlockContainer=2C #b7=2C #b10 .mceTextBlockContainer=2C #b12 .=
+mceTextBlockContainer=2C #b43 .mceTextBlockContainer=2C #b44 .mceTextBlock=
+Container=2C #b51=2C #b59 .mceTextBlockContainer=2C #b60 .mceTextBlockCont=
+ainer=2C #b61{padding:12px 24px!important;}
+#gutterContainerId-4=2C #gutterContainerId-6=2C #gutterContainerId-10=2C #=
+gutterContainerId-12=2C #gutterContainerId-18=2C #gutterContainerId-43=2C=
+ #gutterContainerId-44=2C #gutterContainerId-59=2C #gutterContainerId-60{p=
+adding:0!important;}
+#b6 .mceTextBlockContainer{padding:0 24px 20px!important;}
+#b7 table=2C #b51 table=2C #b61 table{float:none!important;margin:0 auto!i=
+mportant;}
+#b7 .mceButtonContainer=2C #b51 .mceButtonContainer=2C #b61 .mceButtonCont=
+ainer{width:100%!important;max-width:100%!important;}
+#b7 .mceButtonLink=2C #b51 .mceButtonLink=2C #b61 .mceButtonLink{padding-t=
+op:16px!important;padding-bottom:16px!important;font-size:16px!important;}
+#b14 .mceDividerBlock=2C #b35 .mceDividerBlock=2C #b52 .mceDividerBlock=2C=
+ #b54 .mceDividerBlock{border-top-width:1px!important;}
+#b14=2C #b35=2C #b52=2C #b54{padding:20px 24px!important;}
+#b17=2C #b18 .mceTextBlockContainer{padding:0 24px 16px!important;}
+#b17 table=2C #b34 table=2C #b42 table=2C #b55 table{margin-left:auto!impo=
+rtant;margin-right:auto!important;float:none!important;}
+#b34=2C #b42=2C #b55{padding:12px 0!important;}
+}
+@media only screen and (max-width: 640px) {
+=2EmceClusterLayout td{padding:4px!important;}
+}</style></head>
+<body><div itemscope=3D"" itemtype=3D"http://schema.org/EmailMessage"><div=
+ itemprop=3D"publisher" itemscope=3D"" itemtype=3D"http://schema.org/Organ=
+ization"><meta itemprop=3D"name" content=3D"Team CQ=2C Inc"><link itemprop=
+=3D"url" content=3D"https://cryptoquant.com"></div><div itemprop=3D"about"=
+ itemscope=3D"" itemtype=3D"http://schema.org/Offer"><link itemprop=3D"ima=
+ge" href=3D"https://mcusercontent.com/194ac041bb7af11b2a3017080/images/799=
+b2ab9-1652-0c2e-0c13-0fe2117ad7e0.png"></div></div>
+<!--
+-->
+<!--[if !gte mso 9]><!----><span class=3D"mcnPreviewText" style=3D"displa=
+y:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opa=
+city:0; overflow:hidden; visibility:hidden; mso-hide:all;">Large holders a=
+re increasing exchange deposits across BTC=2C ETH=2C and Altcoins as price=
+s drop. This trend could reinforce the current downtrend.</span><!--<![en=
+dif]-->
+<!--
+-->
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">=CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F=
+ =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C=
+ =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0=
+ =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=
+  =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+ =CD=8F =E2=80=8C =C2=A0 =E2=80=87  =CD=8F =E2=80=8C =C2=A0 =E2=80=87=C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD</div><div styl=
+e=3D"display:none;"><img src=3D"https://cryptoquant.us4.list-manage.com/tr=
+ack/open.php?u=3D194ac041bb7af11b2a3017080&id=3D51af43e758&e=3D5b5cc37f4b=
+" height=3D"1" width=3D"1" style=3D"display:none;" alt=3D""></div>
+<center>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" height=3D"100%" wi=
+dth=3D"100%" id=3D"bodyTable" style=3D"background-color: rgb(255=2C 255=2C=
+ 255);">
+<tbody><tr>
+<td class=3D"bodyCell" align=3D"center" valign=3D"top">
+<table id=3D"root" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%"><tbody data-block-id=3D"3" class=3D"mceWrapper"><tr><td style=3D=
+"background-color:transparent" valign=3D"top" align=3D"center" class=3D"mc=
+eSectionBody"><!--[if (gte mso 9)|(IE)]><table align=3D"center" border=3D=
+"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"660" style=3D"width:660px=
+;"><tr><td><![endif]--><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"max-width:660px" role=3D"presentation"><tbo=
+dy><tr><td style=3D"background-color:#ffffff" valign=3D"top" class=3D"mceW=
+rapperInner"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" width=3D"100%" role=3D"presentation" data-block-id=3D"2"><tbod=
+y><tr class=3D"mceRow"><td style=3D"background-position:center;background-=
+repeat:no-repeat;background-size:cover" valign=3D"top"><table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation">=
+<tbody><tr><td style=3D"padding-top:0;padding-bottom:0" valign=3D"top" cla=
+ss=3D"mceColumn" id=3D"mceColumnId--13" data-block-id=3D"-13" colspan=3D"1=
+2" width=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" role=3D"presentation"><tbody><tr><td valign=3D"top" class=
+=3D"mceGutterContainer" id=3D"gutterContainerId-36"><table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:=
+separate" role=3D"presentation"><tbody><tr><td style=3D"padding-top:12px;p=
+adding-bottom:12px;padding-right:0;padding-left:0;border:0;border-radius:0=
+" valign=3D"top" id=3D"b36"><table align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" data-block=
+-id=3D"36" id=3D"section_c6e34d1c772dcc9d68deca1805e68a7f" class=3D"mceLay=
+out"><tbody><tr class=3D"mceRow"><td style=3D"background-position:center;b=
+ackground-repeat:no-repeat;background-size:cover" valign=3D"top"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"pres=
+entation"><tbody><tr><td valign=3D"top" class=3D"mceColumn" id=3D"mceColum=
+nId--16" data-block-id=3D"-16" colspan=3D"12" width=3D"100%"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presenta=
+tion"><tbody><tr><td style=3D"border:0;border-radius:0" valign=3D"top" ali=
+gn=3D"center" id=3D"b-8"><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" data-block-i=
+d=3D"-8"><tbody><tr class=3D"mceRow"><td style=3D"background-position:cent=
+er;background-repeat:no-repeat;background-size:cover" valign=3D"top"><tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"=
+presentation"><tbody><tr><td valign=3D"top" class=3D"mceColumn" id=3D"mceC=
+olumnId--19" data-block-id=3D"-19" colspan=3D"12" width=3D"100%"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"pres=
+entation"><tbody><tr><td style=3D"border:0;border-radius:0" valign=3D"top"=
+ id=3D"b41"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%" role=3D"presentation" data-block-id=3D"41"><tbod=
+y><tr class=3D"mceRow"><td style=3D"background-position:center;background-=
+repeat:no-repeat;background-size:cover;padding-top:0px;padding-bottom:0px"=
+ valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"24" w=
+idth=3D"100%" style=3D"table-layout:fixed" role=3D"presentation"><colgroup=
+><col span=3D"1" width=3D"8.333333333333332%"><col span=3D"1" width=3D"8.3=
+33333333333332%"><col span=3D"1" width=3D"8.333333333333332%"><col span=3D=
+"1" width=3D"8.333333333333332%"><col span=3D"1" width=3D"8.33333333333333=
+2%"><col span=3D"1" width=3D"8.333333333333332%"><col span=3D"1" width=3D"=
+8.333333333333332%"><col span=3D"1" width=3D"8.333333333333332%"><col span=
+=3D"1" width=3D"8.333333333333332%"><col span=3D"1" width=3D"8.33333333333=
+3332%"><col span=3D"1" width=3D"8.333333333333332%"><col span=3D"1" width=
+=3D"8.333333333333332%"></colgroup><tbody><tr><td style=3D"padding-top:0;p=
+adding-bottom:0" valign=3D"top" class=3D"mceColumn" id=3D"mceColumnId-38"=
+ data-block-id=3D"38" colspan=3D"5" width=3D"41.66666666666667%"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"pres=
+entation"><tbody><tr><td style=3D"background-color:transparent;padding-top=
+:12px;padding-bottom:12px;padding-right:0;padding-left:0;border:0;border-r=
+adius:0" valign=3D"top" class=3D"mceImageBlockContainer" align=3D"center"=
+ id=3D"b42"><div><!--[if !mso]><!--></div><a href=3D"https://cryptoquant.=
+us4.list-manage.com/track/click?u=3D194ac041bb7af11b2a3017080&id=3D5a0c9a5=
+f1c&e=3D5b5cc37f4b" style=3D"display:block" data-block-id=3D"42"><table a=
+lign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+85%" style=3D"border-collapse:separate;margin:0;vertical-align:top;max-wid=
+th:85%;width:85%;height:auto" role=3D"presentation" data-testid=3D"image-4=
+2"><tbody><tr><td style=3D"border:0;border-radius:0;margin:0" valign=3D"to=
+p"><img alt=3D"" src=3D"https://mcusercontent.com/194ac041bb7af11b2a301708=
+0/images/5fd3c240-aa76-8317-a797-7db3bdc68fcb.png" width=3D"233.75" height=
+=3D"auto" style=3D"display:block;max-width:100%;height:auto;border-radius:=
+0" class=3D"imageDropZone mceImage"></td></tr></tbody></table></a><div><!-=
+-<![endif]--></div><div>
+<!--[if mso]>
+<a href=3D"https://nexo.go.link/jSCz4"><span class=3D"mceImageBorder" styl=
+e=3D"border:0;border-width:2px;vertical-align:top;margin:0"><img role=3D"p=
+resentation" class=3D"imageDropZone mceImage" src=3D"https://mcusercontent=
+=2Ecom/194ac041bb7af11b2a3017080/images/5fd3c240-aa76-8317-a797-7db3bdc68fcb=
+=2Epng" alt=3D"" width=3D"233.75" height=3D"auto" style=3D"display:block;max=
+-width:233.75px;width:233.75px;height:auto"/></span></a>
+<![endif]-->
+</div></td></tr></tbody></table></td><td style=3D"padding-top:0;padding-bo=
+ttom:0" valign=3D"top" class=3D"mceColumn" id=3D"mceColumnId-40" data-bloc=
+k-id=3D"40" colspan=3D"7" width=3D"58.333333333333336%"><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation"=
+><tbody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;pa=
+dding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutterCont=
+ainerId-43"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"border-collapse:separate" role=3D"presentation"><tbody>=
+<tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-le=
+ft:0;border:0;border-radius:0" valign=3D"top" id=3D"b43"><table width=3D"1=
+00%" style=3D"border:0;background-color:transparent;border-radius:0;border=
+-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;padding-righ=
+t:24px;padding-top:12px;padding-bottom:12px" class=3D"mceTextBlockContaine=
+r"><div data-block-id=3D"43" class=3D"mceText" id=3D"d43" style=3D"width:1=
+00%"><p style=3D"text-align: left;" class=3D"last-child"><span style=3D"fo=
+nt-size: 14px">Grow your BTC=2C ETH=2C and XRP wealth with </span><a href=
+=3D"https://cryptoquant.us4.list-manage.com/track/click?u=3D194ac041bb7af1=
+1b2a3017080&id=3Dffa68d3179&e=3D5b5cc37f4b" target=3D"_blank"><span style=
+=3D"font-size: 14px">Nexo</span></a></p></div></td></tr></tbody></table></=
+td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></tabl=
+e></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></=
+table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbod=
+y></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></=
+tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></t=
+r></tbody></table><!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-=
+-></td></tr></tbody><tbody data-block-id=3D"16" class=3D"mceWrapper"><tr><=
+td style=3D"background-color:transparent" valign=3D"top" align=3D"center"=
+ class=3D"mceSectionBody"><!--[if (gte mso 9)|(IE)]><table align=3D"cente=
+r" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"660" style=3D=
+"width:660px;"><tr><td><![endif]--><table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%" style=3D"max-width:660px" role=3D"presen=
+tation"><tbody><tr><td valign=3D"top" class=3D"mceWrapperInner"><table ali=
+gn=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"10=
+0%" role=3D"presentation" data-block-id=3D"15"><tbody><tr class=3D"mceRow"=
+><td style=3D"background-position:center;background-repeat:no-repeat;backg=
+round-size:cover" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" width=3D"100%" role=3D"presentation"><tbody><tr><td style=
+=3D"padding-top:0;padding-bottom:0" valign=3D"top" class=3D"mceColumn" id=
+=3D"mceColumnId--14" data-block-id=3D"-14" colspan=3D"12" width=3D"100%"><=
+table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0;p=
+adding-right:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer"=
+ id=3D"gutterContainerId-4"><table border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" width=3D"100%" style=3D"border-collapse:separate" role=3D"presen=
+tation"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-rig=
+ht:0;padding-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b4"><ta=
+ble width=3D"100%" style=3D"border:0;background-color:transparent;border-r=
+adius:0;border-collapse:separate"><tbody><tr><td style=3D"padding-left:24p=
+x;padding-right:24px;padding-top:12px;padding-bottom:12px" class=3D"mceTex=
+tBlockContainer"><div data-block-id=3D"4" class=3D"mceText" id=3D"d4" styl=
+e=3D"width:100%"><p style=3D"line-height: 0; mso-line-height-alt: 0%;"><br=
+></p><p style=3D"line-height: 0; mso-line-height-alt: 0%;"><br></p><p styl=
+e=3D"line-height: 0; mso-line-height-alt: 0%;"><br></p><p style=3D"line-he=
+ight: 0; mso-line-height-alt: 0%;"><br></p><p style=3D"line-height: 0; mso=
+-line-height-alt: 0%;"><br></p><h1 style=3D"text-align: center;" class=3D"=
+last-child"><strong><span style=3D"font-size: 24px">Exchange Pressure</spa=
+n></strong></h1></div></td></tr></tbody></table></td></tr></tbody></table>=
+</td></tr><tr><td style=3D"background-color:transparent;padding-top:12px;p=
+adding-bottom:12px;padding-right:0;padding-left:0;border:0;border-radius:0=
+" valign=3D"top" class=3D"mceImageBlockContainer" align=3D"center" id=3D"b=
+34"><div><!--[if !mso]><!--></div><a href=3D"https://cryptoquant.us4.list=
+-manage.com/track/click?u=3D194ac041bb7af11b2a3017080&id=3De6c88fdef3&e=3D=
+5b5cc37f4b" style=3D"display:block" target=3D"_blank" data-block-id=3D"34=
+"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" style=3D"border-collapse:separate;margin:0;vertical-align:=
+top;max-width:561px;width:100%;height:auto" role=3D"presentation" data-tes=
+tid=3D"image-34"><tbody><tr><td style=3D"border:0;border-radius:10px;margi=
+n:0" valign=3D"top"><img alt=3D"" src=3D"https://mcusercontent.com/194ac04=
+1bb7af11b2a3017080/images/799b2ab9-1652-0c2e-0c13-0fe2117ad7e0.png" width=
+=3D"561" height=3D"auto" style=3D"display:block;max-width:100%;height:auto=
+;border-radius:10px" class=3D"imageDropZone mceImage"></td></tr></tbody></=
+table></a><div><!--<![endif]--></div><div>
+<!--[if mso]>
+<a href=3D"https://cryptoquant.com/insights/research/6927264684244e57ffb32=
+238-26-November-2025-Under-Pressure%C2%A0Large-Players-are-Sending-Increas=
+ing-Amounts-of-?utm_source=3Dmailchimp&utm_medium=3Dnewsletter&utm_campaig=
+n=3Dresearch&utm_content=3Dcrypto-weekly-report"><span class=3D"mceImageBo=
+rder" style=3D"border:0;border-width:1px;vertical-align:top;margin:0"><img=
+ role=3D"presentation" class=3D"imageDropZone mceImage" src=3D"https://mcu=
+sercontent.com/194ac041bb7af11b2a3017080/images/799b2ab9-1652-0c2e-0c13-0f=
+e2117ad7e0.png" alt=3D"" width=3D"561" height=3D"auto" style=3D"display:bl=
+ock;max-width:561px;width:561px;height:auto"/></span></a>
+<![endif]-->
+</div></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-ri=
+ght:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gu=
+tterContainerId-6"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" style=3D"border-collapse:separate" role=3D"presentation"><=
+tbody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padd=
+ing-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b6"><table width=
+=3D"100%" style=3D"border:0;background-color:transparent;border-radius:0;b=
+order-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;padding=
+-right:24px;padding-top:0;padding-bottom:20px" class=3D"mceTextBlockContai=
+ner"><div data-block-id=3D"6" class=3D"mceText" id=3D"d6" style=3D"width:1=
+00%"><p style=3D"line-height: 0; mso-line-height-alt: 0%;"><br></p><p styl=
+e=3D"line-height: 0; mso-line-height-alt: 0%;"><br></p><p style=3D"line-he=
+ight: 0; mso-line-height-alt: 0%;"><br></p><p style=3D"line-height: 0; mso=
+-line-height-alt: 0%;"><br></p><p class=3D"mcePastedContent">Bitcoin fell=
+ to a seven-month low of ~$80K last week=2C and on-chain data shows exchan=
+ge deposits rising across the board. </p><p class=3D"mcePastedContent"><br=
+></p><p class=3D"mcePastedContent">Large traders and long-term holders hav=
+e increased their activity=2C a trend that could keep pressure on prices i=
+f it continues.</p><p class=3D"mcePastedContent"><br></p><p class=3D"mcePa=
+stedContent">Bitcoin exchange inflows climbed as the price dropped to ~87K=
+=2E Total BTC sent to exchanges hit <strong>9K</strong> on November 21=2C wi=
+th <strong>45%</strong> coming from large deposits of 100 BTC or more. The=
+ average BTC deposit value also jumped to <strong>1.23 BTC</strong>=2C the=
+ highest in a year.</p><p class=3D"mcePastedContent"><br></p><p class=3D"m=
+cePastedContent">Ethereum shows a similar pattern. Large deposits now domi=
+nate inflows=2C and the <strong>average deposit value surged to 41.7 ETH</=
+strong>=2C a three-year high=2C as ETH fell toward $2.9K.</p><p class=3D"m=
+cePastedContent"><br></p><p class=3D"mcePastedContent last-child">Get the=
+ full insight in our latest report.</p></div></td></tr></tbody></table></t=
+d></tr></tbody></table></td></tr><tr><td style=3D"background-color:transpa=
+rent;padding-top:12px;padding-bottom:12px;padding-right:24px;padding-left:=
+24px;border:0;border-radius:0" valign=3D"top" class=3D"mceButtonBlockConta=
+iner" align=3D"center" id=3D"b7"><div><!--[if !mso]><!--></div><table ali=
+gn=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"10=
+0%" style=3D"max-width:564px" role=3D"presentation" data-block-id=3D"7" cl=
+ass=3D"mceButtonContainer"><tbody><tr class=3D"mceStandardButton"><td styl=
+e=3D"background-color:#4f37e4;border-radius:5px;text-align:center" valign=
+=3D"top" class=3D"mceButton"><a href=3D"https://cryptoquant.us4.list-manag=
+e.com/track/click?u=3D194ac041bb7af11b2a3017080&id=3Dfac432e58a&e=3D5b5cc37f4b" target=3D"_blank" class=3D"mceButtonLink" style=3D"background-color=
+:#4f37e4;border-radius:5px;border:1px solid #4f37e4;color:#ffffff;display:=
+block;font-family:'Roboto'=2C 'Helvetica Neue'=2C Helvetica=2C Arial=2C sa=
+ns-serif;font-size:16px;font-weight:bold;font-style:normal;padding:16px 28=
+px;text-decoration:none;text-align:center;direction:ltr;letter-spacing:0px=
+" rel=3D"noreferrer">=F0=9F=91=89 Explore the Details</a></td></tr></tbody=
+></table><div><!--<![endif]--></div><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width:564=
+px" role=3D"presentation" data-block-id=3D"7" class=3D"mceButtonContainer"=
+><tbody><tr>
+<!--[if mso]>
+<td align=3D"center">
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:w=3D"urn:schemas-microsoft-com:office:word"
+href=3D"https://cryptoquant.com/insights/research/6927264684244e57ffb32238=
+-26-November-2025-Under-Pressure%C2%A0Large-Players-are-Sending-Increasing=
+-Amounts-of-?utm_source=3Dmailchimp&utm_medium=3Dnewsletter&utm_campaign=
+=3Dresearch&utm_content=3Dcrypto-weekly-report"
+style=3D"v-text-anchor:middle; width:563.99px; height:54.49px;"
+arcsize=3D"1%"
+strokecolor=3D"#4f37e4"
+strokeweight=3D"1px"
+fillcolor=3D"#4f37e4">
+<v:stroke dashstyle=3D"solid"/>
+<w:anchorlock />
+<center style=3D"
+color: #ffffff;
+display: block;
+font-family: 'Roboto'=2C 'Helvetica Neue'=2C Helvetica=2C Arial=2C sans-se=
+rif;
+font-size: 16;
+font-style: normal;
+font-weight: bold;
+letter-spacing: 0px;
+text-decoration: none;
+text-align: center;
+direction: ltr;"
+>
+=F0=9F=91=89 Explore the Details
+</center>
+</v:roundrect>
+</td>
+<![endif]-->
+</tr></tbody></table></td></tr><tr><td valign=3D"top" class=3D"mceGutterCo=
+ntainer" id=3D"gutterContainerId-58"><table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:separate" role=
+=3D"presentation"><tbody><tr><td style=3D"padding-top:8px;padding-bottom:8=
+px;padding-right:0;padding-left:0;border:0;border-radius:0" valign=3D"top"=
+ class=3D"mceLayoutContainer" id=3D"b58"><table align=3D"center" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentatio=
+n" data-block-id=3D"58" id=3D"section_bf3ba79f610aa3906cf4a45c46cb5dac" cl=
+ass=3D"mceLayout"><tbody><tr class=3D"mceRow"><td style=3D"background-posi=
+tion:center;background-repeat:no-repeat;background-size:cover" valign=3D"t=
+op"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ role=3D"presentation"><tbody><tr><td valign=3D"top" class=3D"mceColumn" i=
+d=3D"mceColumnId--18" data-block-id=3D"-18" colspan=3D"12" width=3D"100%">=
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" rol=
+e=3D"presentation"><tbody><tr><td style=3D"border:0;border-radius:0" valig=
+n=3D"top" align=3D"center" id=3D"b-12"><table align=3D"center" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation"=
+ data-block-id=3D"-12"><tbody><tr class=3D"mceRow"><td style=3D"background=
+-position:center;background-repeat:no-repeat;background-size:cover" valign=
+=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" role=3D"presentation"><tbody><tr><td valign=3D"top" class=3D"mceColu=
+mn" id=3D"mceColumnId--21" data-block-id=3D"-21" colspan=3D"12" width=3D"1=
+00%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+" role=3D"presentation"><tbody><tr><td style=3D"border:0;border-radius:0"=
+ valign=3D"top" id=3D"b57"><table align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" data-block-=
+id=3D"57"><tbody><tr class=3D"mceRow"><td style=3D"background-position:cen=
+ter;background-repeat:no-repeat;background-size:cover" valign=3D"top"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"24" width=3D"100%" role=
+=3D"presentation"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0"=
+ valign=3D"top" class=3D"mceColumn" id=3D"mceColumnId-56" data-block-id=3D=
+"56" colspan=3D"12" width=3D"100%"><table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" role=3D"presentation"><tbody><tr><td style=
+=3D"background-color:transparent;padding-top:20px;padding-bottom:20px;padd=
+ing-right:24px;padding-left:24px;border:0;border-radius:0" valign=3D"top"=
+ class=3D"mceDividerBlockContainer" id=3D"b35"><table align=3D"center" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"back=
+ground-color:transparent;width:100%" role=3D"presentation" class=3D"mceDiv=
+iderContainer" data-block-id=3D"35"><tbody><tr><td style=3D"min-width:100%=
+;border-top-width:1px;border-top-style:solid;border-top-color:#e4e4eb;line=
+-height:0;font-size:0" valign=3D"top" class=3D"mceDividerBlock">=C2=A0</td=
+></tr></tbody></table></td></tr><tr><td style=3D"padding-top:0;padding-bot=
+tom:0;padding-right:0;padding-left:0" valign=3D"top" class=3D"mceGutterCon=
+tainer" id=3D"gutterContainerId-59"><table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:separate" role=
+=3D"presentation"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0;p=
+adding-right:0;padding-left:0;border:0;border-radius:0" valign=3D"top" id=
+=3D"b59"><table width=3D"100%" style=3D"border:0;background-color:transpar=
+ent;border-radius:0;border-collapse:separate"><tbody><tr><td style=3D"padd=
+ing-left:24px;padding-right:24px;padding-top:12px;padding-bottom:12px" cla=
+ss=3D"mceTextBlockContainer"><div data-block-id=3D"59" class=3D"mceText" i=
+d=3D"d59" style=3D"width:100%"><h1 style=3D"text-align: center;" class=3D"=
+last-child">Black Friday</h1></div></td></tr></tbody></table></td></tr></t=
+body></table></td></tr></tbody></table></td></tr></tbody></table></td></tr=
+></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td>=
+</tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><=
+/td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td style=
+=3D"background-color:transparent;padding-top:12px;padding-bottom:12px;padd=
+ing-right:0;padding-left:0;border:0;border-radius:0" valign=3D"top" class=
+=3D"mceImageBlockContainer" align=3D"center" id=3D"b55"><div><!--[if !mso=
+]><!--></div><a href=3D"https://cryptoquant.us4.list-manage.com/track/clic=
+k?u=3D194ac041bb7af11b2a3017080&id=3D085bc1608d&e=3D5b5cc37f4b" style=3D"=
+display:block" target=3D"_blank" data-block-id=3D"55"><table align=3D"cent=
+er" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=
+=3D"border-collapse:separate;margin:0;vertical-align:top;max-width:561px;w=
+idth:100%;height:auto" role=3D"presentation" data-testid=3D"image-55"><tbo=
+dy><tr><td style=3D"border:0;border-radius:10px;margin:0" valign=3D"top"><=
+img alt=3D"" src=3D"https://mcusercontent.com/194ac041bb7af11b2a3017080/im=
+ages/62332639-1f64-da2f-7ac8-a28f97c216ea.png" width=3D"561" height=3D"aut=
+o" style=3D"display:block;max-width:100%;height:auto;border-radius:10px" c=
+lass=3D"imageDropZone mceImage"></td></tr></tbody></table></a><div><!--<![=
+endif]--></div><div>
+<!--[if mso]>
+<a href=3D"https://cryptoquant.com/promotion?utm_source=3Dmailchimp&utm_me=
+dium=3Dnewsletter&utm_campaign=3Dpromotion&utm_content=3Dblack-friday&utm_=
+term=3Demail"><span class=3D"mceImageBorder" style=3D"border:0;border-widt=
+h:1px;vertical-align:top;margin:0"><img role=3D"presentation" class=3D"ima=
+geDropZone mceImage" src=3D"https://mcusercontent.com/194ac041bb7af11b2a30=
+17080/images/62332639-1f64-da2f-7ac8-a28f97c216ea.png" alt=3D"" width=3D"5=
+61" height=3D"auto" style=3D"display:block;max-width:561px;width:561px;hei=
+ght:auto"/></span></a>
+<![endif]-->
+</div></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-ri=
+ght:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gu=
+tterContainerId-60"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"100%" style=3D"border-collapse:separate" role=3D"presentation">=
+<tbody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;pad=
+ding-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b60"><table wid=
+th=3D"100%" style=3D"border:0;background-color:transparent;border-radius:0=
+;border-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;paddi=
+ng-right:24px;padding-top:12px;padding-bottom:12px" class=3D"mceTextBlockC=
+ontainer"><div data-block-id=3D"60" class=3D"mceText" id=3D"d60" style=3D"=
+width:100%"><p class=3D"mcePastedContent">Black Friday is live. This is ou=
+r biggest discount of the year.</p><p class=3D"mcePastedContent"><br></p><=
+p class=3D"mcePastedContent">For a limited time=2C you can get up to <stro=
+ng>40% off</strong> CryptoQuant Advanced and Professional plans. </p><p cl=
+ass=3D"mcePastedContent"><br></p><p class=3D"mcePastedContent"><strong>Wha=
+t you get:</strong></p><ul><li><p class=3D"mcePastedContent">200+ Bitcoin=
+ and Ethereum on-chain indicators</p></li><li><p class=3D"mcePastedContent=
+">Exchange-level data</p></li><li><p class=3D"mcePastedContent">Access to=
+ Research Reports</p></li><li><p class=3D"mcePastedContent">Featured indic=
+ators for 50+ altcoins</p></li><li><p class=3D"mcePastedContent">ProChart=
+ with full historical access</p></li><li><p class=3D"mcePastedContent">API=
+ built for algo traders=2C bot developers=2C and analysts</p></li><li><p c=
+lass=3D"mcePastedContent">Faster research with alerts=2C dashboards=2C and=
+ long-term data</p></li></ul><p class=3D"mcePastedContent"><br></p><p clas=
+s=3D"mcePastedContent">If you=E2=80=99ve been waiting to upgrade=2C this i=
+s the moment.</p><p class=3D"mcePastedContent"><br></p><p class=3D"mcePast=
+edContent last-child"><strong>Save 40% today and level up your on-chain an=
+alysis.</strong></p></div></td></tr></tbody></table></td></tr></tbody></ta=
+ble></td></tr><tr><td style=3D"background-color:transparent;padding-top:12=
+px;padding-bottom:12px;padding-right:24px;padding-left:24px;border:0;borde=
+r-radius:0" valign=3D"top" class=3D"mceButtonBlockContainer" align=3D"cent=
+er" id=3D"b61"><div><!--[if !mso]><!--></div><table align=3D"center" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-w=
+idth:564px" role=3D"presentation" data-block-id=3D"61" class=3D"mceButtonC=
+ontainer"><tbody><tr class=3D"mceStandardButton"><td style=3D"background-c=
+olor:#4f37e4;border-radius:5px;text-align:center" valign=3D"top" class=3D"=
+mceButton"><a href=3D"https://cryptoquant.us4.list-manage.com/track/click?=
+u=3D194ac041bb7af11b2a3017080&id=3D4284d0a5dd&e=3D5b5cc37f4b" target=3D"_=
+blank" class=3D"mceButtonLink" style=3D"background-color:#4f37e4;border-ra=
+dius:5px;border:1px solid #4f37e4;color:#ffffff;display:block;font-family:=
+'Roboto'=2C 'Helvetica Neue'=2C Helvetica=2C Arial=2C sans-serif;font-size=
+:16px;font-weight:bold;font-style:normal;padding:16px 28px;text-decoration=
+:none;text-align:center;direction:ltr;letter-spacing:0px" rel=3D"noreferre=
+r">=F0=9F=91=89 Get the Offer</a></td></tr></tbody></table><div><!--<![en=
+dif]--></div><table align=3D"center" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" width=3D"100%" style=3D"max-width:564px" role=3D"presentation"=
+ data-block-id=3D"61" class=3D"mceButtonContainer"><tbody><tr>
+<!--[if mso]>
+<td align=3D"center">
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:w=3D"urn:schemas-microsoft-com:office:word"
+href=3D"https://cryptoquant.com/promotion?utm_source=3Dmailchimp&utm_mediu=
+m=3Dnewsletter&utm_campaign=3Dpromotion&utm_content=3Dblack-friday&utm_ter=
+m=3Demail"
+style=3D"v-text-anchor:middle; width:563.99px; height:54.49px;"
+arcsize=3D"1%"
+strokecolor=3D"#4f37e4"
+strokeweight=3D"1px"
+fillcolor=3D"#4f37e4">
+<v:stroke dashstyle=3D"solid"/>
+<w:anchorlock />
+<center style=3D"
+color: #ffffff;
+display: block;
+font-family: 'Roboto'=2C 'Helvetica Neue'=2C Helvetica=2C Arial=2C sans-se=
+rif;
+font-size: 16;
+font-style: normal;
+font-weight: bold;
+letter-spacing: 0px;
+text-decoration: none;
+text-align: center;
+direction: ltr;"
+>
+=F0=9F=91=89 Get the Offer
+</center>
+</v:roundrect>
+</td>
+<![endif]-->
+</tr></tbody></table></td></tr><tr><td style=3D"background-color:transpare=
+nt;padding-top:20px;padding-bottom:20px;padding-right:24px;padding-left:24=
+px;border:0;border-radius:0" valign=3D"top" class=3D"mceDividerBlockContai=
+ner" id=3D"b54"><table align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" width=3D"100%" style=3D"background-color:transparent;width:=
+100%" role=3D"presentation" class=3D"mceDividerContainer" data-block-id=3D=
+"54"><tbody><tr><td style=3D"min-width:100%;border-top-width:1px;border-to=
+p-style:solid;border-top-color:#e4e4eb;line-height:0;font-size:0" valign=
+=3D"top" class=3D"mceDividerBlock">=C2=A0</td></tr></tbody></table></td></=
+tr><tr><td valign=3D"top" class=3D"mceGutterContainer" id=3D"gutterContain=
+erId-45"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" style=3D"border-collapse:separate" role=3D"presentation"><tbody><tr>=
+<td style=3D"padding-top:12px;padding-bottom:12px;padding-right:0;padding-=
+left:0;border:0;border-radius:0" valign=3D"top" class=3D"mceLayoutContaine=
+r" id=3D"b45"><table align=3D"center" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"100%" role=3D"presentation" data-block-id=3D"45" id=
+=3D"section_327fd6e41296d2e4754bc69a1c9f9c80" class=3D"mceLayout"><tbody><=
+tr class=3D"mceRow"><td style=3D"background-position:center;background-rep=
+eat:no-repeat;background-size:cover" valign=3D"top"><table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation"><tb=
+ody><tr><td valign=3D"top" class=3D"mceColumn" id=3D"mceColumnId--17" data=
+-block-id=3D"-17" colspan=3D"12" width=3D"100%"><table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation"><tbody>=
+<tr><td style=3D"border:0;border-radius:0" valign=3D"top" align=3D"center"=
+ id=3D"b-10"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" width=3D"100%" role=3D"presentation" data-block-id=3D"-10"><tb=
+ody><tr class=3D"mceRow"><td style=3D"background-position:center;backgroun=
+d-repeat:no-repeat;background-size:cover" valign=3D"top"><table border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation=
+"><tbody><tr><td valign=3D"top" class=3D"mceColumn" id=3D"mceColumnId--20"=
+ data-block-id=3D"-20" colspan=3D"12" width=3D"100%"><table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation"><t=
+body><tr><td style=3D"border:0;border-radius:0" valign=3D"top" id=3D"b50">=
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" role=3D"presentation" data-block-id=3D"50"><tbody><tr class=
+=3D"mceRow"><td style=3D"background-position:center;background-repeat:no-r=
+epeat;background-size:cover;padding-top:0px;padding-bottom:0px" valign=3D"=
+top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"24" width=3D"100=
+%" style=3D"table-layout:fixed" role=3D"presentation"><colgroup><col span=
+=3D"1" width=3D"8.333333333333332%"><col span=3D"1" width=3D"8.33333333333=
+3332%"><col span=3D"1" width=3D"8.333333333333332%"><col span=3D"1" width=
+=3D"8.333333333333332%"><col span=3D"1" width=3D"8.333333333333332%"><col=
+ span=3D"1" width=3D"8.333333333333332%"><col span=3D"1" width=3D"8.333333=
+333333332%"><col span=3D"1" width=3D"8.333333333333332%"><col span=3D"1" w=
+idth=3D"8.333333333333332%"><col span=3D"1" width=3D"8.333333333333332%"><=
+col span=3D"1" width=3D"8.333333333333332%"><col span=3D"1" width=3D"8.333=
+333333333332%"></colgroup><tbody><tr><td style=3D"padding-top:0;padding-bo=
+ttom:0" valign=3D"top" class=3D"mceColumn" id=3D"mceColumnId-47" data-bloc=
+k-id=3D"47" colspan=3D"8" width=3D"66.66666666666666%"><table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation">=
+<tbody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;pad=
+ding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutterConta=
+inerId-44"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"border-collapse:separate" role=3D"presentation"><tbody>=
+<tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-le=
+ft:0;border:0;border-radius:0" valign=3D"top" id=3D"b44"><table width=3D"1=
+00%" style=3D"border:0;background-color:transparent;border-radius:0;border=
+-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;padding-righ=
+t:24px;padding-top:12px;padding-bottom:12px" class=3D"mceTextBlockContaine=
+r"><div data-block-id=3D"44" class=3D"mceText" id=3D"d44" style=3D"width:1=
+00%"><p class=3D"p1 mcePastedContent last-child"><span style=3D"font-size:=
+ 14px">Nexo and the </span><a href=3D"https://cryptoquant.us4.list-manage.=
+com/track/click?u=3D194ac041bb7af11b2a3017080&id=3Dce8a2245a4&e=3D5b5cc37f4b" target=3D"_blank"><span style=3D"font-size: 14px">DP World Tour</span=
+></a><span style=3D"font-size: 14px"> partner to drive a new form of wealt=
+h creation for the next generation of investors. Want in? Start building t=
+oday.</span></p></div></td></tr></tbody></table></td></tr></tbody></table>=
+</td></tr></tbody></table></td><td style=3D"padding-top:0;padding-bottom:0=
+" valign=3D"top" class=3D"mceColumn" id=3D"mceColumnId-49" data-block-id=
+=3D"49" colspan=3D"4" width=3D"33.33333333333333%"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation"><tbo=
+dy><tr><td style=3D"background-color:transparent;padding-top:12px;padding-=
+bottom:12px;padding-right:24px;padding-left:24px;border:0;border-radius:0"=
+ valign=3D"top" class=3D"mceButtonBlockContainer" align=3D"center" id=3D"b=
+51"><div><!--[if !mso]><!--></div><table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width:192px"=
+ role=3D"presentation" data-block-id=3D"51" class=3D"mceButtonContainer"><=
+tbody><tr class=3D"mceStandardButton"><td style=3D"background-color:#4f37e=
+4;border-radius:5px;text-align:center" valign=3D"top" class=3D"mceButton">=
+<a href=3D"https://cryptoquant.us4.list-manage.com/track/click?u=3D194ac04=
+1bb7af11b2a3017080&id=3D599b06d3cb&e=3D5b5cc37f4b" target=3D"_blank" clas=
+s=3D"mceButtonLink" style=3D"background-color:#4f37e4;border-radius:5px;bo=
+rder:1px solid #4f37e4;color:#ffffff;display:block;font-family:'Roboto'=2C=
+ 'Helvetica Neue'=2C Helvetica=2C Arial=2C sans-serif;font-size:16px;font-=
+weight:bold;font-style:normal;padding:16px 28px;text-decoration:none;text-=
+align:center;direction:ltr;letter-spacing:0px" rel=3D"noreferrer">Join Nex=
+o</a></td></tr></tbody></table><div><!--<![endif]--></div><table align=3D=
+"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" s=
+tyle=3D"max-width:192px" role=3D"presentation" data-block-id=3D"51" class=
+=3D"mceButtonContainer"><tbody><tr>
+<!--[if mso]>
+<td align=3D"center">
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:w=3D"urn:schemas-microsoft-com:office:word"
+href=3D"https://nexo.go.link/3a48h"
+style=3D"v-text-anchor:middle; width:172.01px; height:51.99px;"
+arcsize=3D"3%"
+strokecolor=3D"#4f37e4"
+strokeweight=3D"1px"
+fillcolor=3D"#4f37e4">
+<v:stroke dashstyle=3D"solid"/>
+<w:anchorlock />
+<center style=3D"
+color: #ffffff;
+display: block;
+font-family: 'Roboto'=2C 'Helvetica Neue'=2C Helvetica=2C Arial=2C sans-se=
+rif;
+font-size: 16;
+font-style: normal;
+font-weight: bold;
+letter-spacing: 0px;
+text-decoration: none;
+text-align: center;
+direction: ltr;"
+>
+Join Nexo
+</center>
+</v:roundrect>
+</td>
+<![endif]-->
+</tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><=
+/td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></tab=
+le></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody><=
+/table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><=
+td style=3D"background-color:transparent;padding-top:20px;padding-bottom:2=
+0px;padding-right:24px;padding-left:24px;border:0;border-radius:0" valign=
+=3D"top" class=3D"mceDividerBlockContainer" id=3D"b52"><table align=3D"cen=
+ter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=
+=3D"background-color:transparent;width:100%" role=3D"presentation" class=
+=3D"mceDividerContainer" data-block-id=3D"52"><tbody><tr><td style=3D"min-=
+width:100%;border-top-width:1px;border-top-style:solid;border-top-color:#e=
+4e4eb;line-height:0;font-size:0" valign=3D"top" class=3D"mceDividerBlock">=
+=C2=A0</td></tr></tbody></table></td></tr><tr><td style=3D"background-colo=
+r:transparent;border:0;border-radius:0" valign=3D"top" id=3D"b8"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"pres=
+entation" data-block-id=3D"8"><tbody><tr><td valign=3D"top" class=3D"mceSp=
+acerBlock" height=3D"50"></td></tr></tbody></table></td></tr><tr><td style=
+=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:0" valign=
+=3D"top" class=3D"mceGutterContainer" id=3D"gutterContainerId-10"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"bo=
+rder-collapse:separate" role=3D"presentation"><tbody><tr><td style=3D"padd=
+ing-top:0;padding-bottom:0;padding-right:0;padding-left:0;border:0;border-=
+radius:0" valign=3D"top" id=3D"b10"><table width=3D"100%" style=3D"border:=
+0;background-color:#e4e4eb;border-radius:0;border-collapse:separate"><tbod=
+y><tr><td style=3D"padding-left:24px;padding-right:24px;padding-top:12px;p=
+adding-bottom:12px" class=3D"mceTextBlockContainer"><div data-block-id=3D"=
+10" class=3D"mceText" id=3D"d10" style=3D"width:100%"><h2 style=3D"text-al=
+ign: center;">=F0=9F=93=8C Further Notice</h2><ol class=3D"last-child"><li=
+><p>More details are in the <a href=3D"https://cryptoquant.us4.list-manage=
+=2Ecom/track/click?u=3D194ac041bb7af11b2a3017080&id=3D320604392e&e=3D5b5cc37f4b" target=3D"_blank">CryptoQuant User Guide</a></p></li><li><p>The cont=
+ent is for informational purposes only=2C you should not construe any such=
+ information or other material as legal=2C tax=2C investment=2C financial=
+=2C or other advice.</p></li></ol></div></td></tr></tbody></table></td></t=
+r></tbody></table></td></tr><tr><td style=3D"background-color:transparent;=
+border:0;border-radius:0" valign=3D"top" id=3D"b11"><table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" dat=
+a-block-id=3D"11"><tbody><tr><td valign=3D"top" class=3D"mceSpacerBlock" h=
+eight=3D"50"></td></tr></tbody></table></td></tr><tr><td style=3D"padding-=
+top:0;padding-bottom:0;padding-right:0;padding-left:0" valign=3D"top" clas=
+s=3D"mceGutterContainer" id=3D"gutterContainerId-12"><table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse=
+:separate" role=3D"presentation"><tbody><tr><td style=3D"padding-top:0;pad=
+ding-bottom:0;padding-right:0;padding-left:0;border:0;border-radius:0" val=
+ign=3D"top" id=3D"b12"><table width=3D"100%" style=3D"border:0;background-=
+color:transparent;border-radius:0;border-collapse:separate"><tbody><tr><td=
+ style=3D"padding-left:24px;padding-right:24px;padding-top:12px;padding-bo=
+ttom:12px" class=3D"mceTextBlockContainer"><div data-block-id=3D"12" class=
+=3D"mceText" id=3D"d12" style=3D"width:100%"><p style=3D"text-align: left;=
+">Kind regards=2C </p><p><br></p><p style=3D"text-align: left;"><strong>Ni=
+ck Pitto</strong> | Head of Marketing | CryptoQuant</p><p><br></p><p class=
+=3D"last-child"><em>Data usage guides and various benefits will be deliver=
+ed via e-mail. If you don't want to get data-driven insights from us again=
+=2C </em><a href=3D"https://cryptoquant.us4.list-manage.com/unsubscribe?u=
+=3D194ac041bb7af11b2a3017080&id=3Da30940cf31&t=3Db&e=3D5b5cc37f4b&c=3D51af43=
+e758"><em>unsubscribe</em></a><em>.</em></p></div></td></tr></tbody></tabl=
+e></td></tr></tbody></table></td></tr><tr><td style=3D"padding-top:20px;pa=
+dding-bottom:20px;padding-right:24px;padding-left:24px;border:0;border-rad=
+ius:0" valign=3D"top" class=3D"mceLayoutContainer" id=3D"b13"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+" role=3D"presentation" data-block-id=3D"13"><tbody><tr class=3D"mceRow"><=
+td style=3D"background-position:center;background-repeat:no-repeat;backgro=
+und-size:cover" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"24" width=3D"100%" role=3D"presentation"><tbody><tr><td valign=
+=3D"top" class=3D"mceColumn" id=3D"mceColumnId--6" data-block-id=3D"-6" co=
+lspan=3D"12" width=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" width=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"bor=
+der:0;border-radius:0" valign=3D"top" class=3D"mceSocialFollowBlockContain=
+er" id=3D"b-5"><table align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" class=3D"mceSocialFollowBlock" data-bl=
+ock-id=3D"-5"><tbody><tr><td valign=3D"middle" align=3D"center"><!--[if m=
+so]><table align=3D"left" border=3D"0" cellspacing=3D "0" cellpadding=3D"0=
+"><tr><![endif]--><!--[if mso]><td align=3D"center" valign=3D"top"><![e=
+ndif]--><table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"display:inline;float:left" role=3D"presentation"><tbody><t=
+r><td style=3D"padding-top:3px;padding-bottom:3px;padding-left:12px;paddin=
+g-right:12px" valign=3D"top" class=3D"mceSocialFollowIcon" align=3D"center=
+" width=3D"40"><a href=3D"https://cryptoquant.us4.list-manage.com/track/cl=
+ick?u=3D194ac041bb7af11b2a3017080&id=3Ddbfbc120ee&e=3D5b5cc37f4b" target=
+=3D"_blank" rel=3D"noreferrer"><img class=3D"mceSocialFollowImage" width=
+=3D"40" height=3D"40" alt=3D"Website icon" src=3D"https://cdn-images.mailc=
+himp.com/icons/social-block-v3/block-icons-v3/website-outline-dark-40.png"=
+></a></td></tr></tbody></table><!--[if mso]></td><![endif]--><!--[if ms=
+o]><td align=3D"center" valign=3D"top"><![endif]--><table align=3D"left"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"display:inline;=
+float:left" role=3D"presentation"><tbody><tr><td style=3D"padding-top:3px;=
+padding-bottom:3px;padding-left:12px;padding-right:12px" valign=3D"top" cl=
+ass=3D"mceSocialFollowIcon" align=3D"center" width=3D"40"><a href=3D"https=
+://cryptoquant.us4.list-manage.com/track/click?u=3D194ac041bb7af11b2a30170=
+80&id=3D06b81e259d&e=3D5b5cc37f4b" target=3D"_blank" rel=3D"noreferrer"><=
+img class=3D"mceSocialFollowImage" width=3D"40" height=3D"40" alt=3D"Linke=
+dIn icon" src=3D"https://cdn-images.mailchimp.com/icons/social-block-v3/bl=
+ock-icons-v3/linkedin-outline-dark-40.png"></a></td></tr></tbody></table><=
+!--[if mso]></td><![endif]--><!--[if mso]><td align=3D"center" valign=
+=3D"top"><![endif]--><table align=3D"left" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" style=3D"display:inline;float:left" role=3D"presentatio=
+n"><tbody><tr><td style=3D"padding-top:3px;padding-bottom:3px;padding-left=
+:12px;padding-right:12px" valign=3D"top" class=3D"mceSocialFollowIcon" ali=
+gn=3D"center" width=3D"40"><a href=3D"https://cryptoquant.us4.list-manage.=
+com/track/click?u=3D194ac041bb7af11b2a3017080&id=3D3b737525fa&e=3D5b5cc37f4b" target=3D"_blank" rel=3D"noreferrer"><img class=3D"mceSocialFollowIma=
+ge" width=3D"40" height=3D"40" alt=3D"Twitter icon" src=3D"https://cdn-ima=
+ges.mailchimp.com/icons/social-block-v3/block-icons-v3/twitter-outline-dar=
+k-40.png"></a></td></tr></tbody></table><!--[if mso]></td><![endif]--><!=
+--[if mso]><td align=3D"center" valign=3D"top"><![endif]--><table align=
+=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"displa=
+y:inline;float:left" role=3D"presentation"><tbody><tr><td style=3D"padding=
+-top:3px;padding-bottom:3px;padding-left:12px;padding-right:12px" valign=
+=3D"top" class=3D"mceSocialFollowIcon" align=3D"center" width=3D"40"><a hr=
+ef=3D"https://cryptoquant.us4.list-manage.com/track/click?u=3D194ac041bb7a=
+f11b2a3017080&id=3D8ff840bb19&e=3D5b5cc37f4b" target=3D"_blank" rel=3D"no=
+referrer"><img class=3D"mceSocialFollowImage" width=3D"40" height=3D"40" a=
+lt=3D"YouTube icon" src=3D"https://cdn-images.mailchimp.com/icons/social-b=
+lock-v3/block-icons-v3/youtube-outline-dark-40.png"></a></td></tr></tbody>=
+</table><!--[if mso]></td><![endif]--><!--[if mso]></tr></table><![end=
+if]--></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbod=
+y></table></td></tr></tbody></table></td></tr><tr><td style=3D"background-=
+color:transparent;padding-top:20px;padding-bottom:20px;padding-right:24px;=
+padding-left:24px;border:0;border-radius:0" valign=3D"top" class=3D"mceDiv=
+iderBlockContainer" id=3D"b14"><table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"background-color:tra=
+nsparent;width:100%" role=3D"presentation" class=3D"mceDividerContainer" d=
+ata-block-id=3D"14"><tbody><tr><td style=3D"min-width:100%;border-top-widt=
+h:1px;border-top-style:solid;border-top-color:#f4f4f4;line-height:0;font-s=
+ize:0" valign=3D"top" class=3D"mceDividerBlock">=C2=A0</td></tr></tbody></=
+table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbod=
+y></table></td></tr></tbody></table><!--[if (gte mso 9)|(IE)]></td></tr><=
+/table><![endif]--></td></tr></tbody><tbody data-block-id=3D"22" class=3D=
+"mceWrapper"><tr><td style=3D"background-color:transparent" valign=3D"top"=
+ align=3D"center" class=3D"mceSectionBody"><!--[if (gte mso 9)|(IE)]><tab=
+le align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=
+=3D"660" style=3D"width:660px;"><tr><td><![endif]--><table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width:660px=
+" role=3D"presentation"><tbody><tr><td style=3D"background-color:#ffffff"=
+ valign=3D"top" class=3D"mceWrapperInner"><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presenta=
+tion" data-block-id=3D"21"><tbody><tr class=3D"mceRow"><td style=3D"backgr=
+ound-position:center;background-repeat:no-repeat;background-size:cover" va=
+lign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"padding-top:0;padd=
+ing-bottom:0" valign=3D"top" class=3D"mceColumn" id=3D"mceColumnId--15" da=
+ta-block-id=3D"-15" colspan=3D"12" width=3D"100%"><table border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation"><tbod=
+y><tr><td style=3D"padding-top:8px;padding-bottom:8px;padding-right:8px;pa=
+dding-left:8px;border:0;border-radius:0" valign=3D"top" id=3D"b20"><table=
+ align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" role=3D"presentation" data-block-id=3D"20" id=3D"section_82dbbf9=
+7f8e714f37981efda94ee3e24" class=3D"mceFooterSection"><tbody><tr class=3D"=
+mceRow"><td style=3D"background-position:center;background-repeat:no-repea=
+t;background-size:cover" valign=3D"top"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"12" width=3D"100%" role=3D"presentation"><tbody><tr><td=
+ style=3D"padding-top:0;padding-bottom:0" valign=3D"top" class=3D"mceColum=
+n" id=3D"mceColumnId--3" data-block-id=3D"-3" colspan=3D"12" width=3D"100%=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" r=
+ole=3D"presentation"><tbody><tr><td style=3D"background-color:transparent;=
+padding-top:0;padding-bottom:16px;padding-right:24px;padding-left:24px;bor=
+der:0;border-radius:0" valign=3D"top" class=3D"mceImageBlockContainer" ali=
+gn=3D"center" id=3D"b17"><div><!--[if !mso]><!--></div><a href=3D"https:/=
+/cryptoquant.us4.list-manage.com/track/click?u=3D194ac041bb7af11b2a3017080=
+&id=3D95592ecb05&e=3D5b5cc37f4b" style=3D"display:block" target=3D"_blank=
+" data-block-id=3D"17"><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:separate;mar=
+gin:0;vertical-align:top;max-width:168px;width:100%;height:auto" role=3D"p=
+resentation" data-testid=3D"image-17"><tbody><tr><td style=3D"border:0;bor=
+der-radius:0;margin:0" valign=3D"top"><img alt=3D"" src=3D"https://mcuserc=
+ontent.com/194ac041bb7af11b2a3017080/images/391f91e8-7ace-7c64-819b-b52cf2=
+b57c3d.png" width=3D"168" height=3D"auto" style=3D"display:block;max-width=
+:100%;height:auto;border-radius:0" class=3D"imageDropZone mceLogo"></td></=
+tr></tbody></table></a><div><!--<![endif]--></div><div>
+<!--[if mso]>
+<a href=3D"https://www.cryptoquant.com/?utm_source=3Dmailchimp&utm_medium=
+=3Donboard&utm_campaign=3Dwebsite&utm_content=3Db2c-automation"><span clas=
+s=3D"mceImageBorder" style=3D"border:0;border-width:2px;vertical-align:top=
+;margin:0"><img role=3D"presentation" class=3D"imageDropZone mceLogo" src=
+=3D"https://mcusercontent.com/194ac041bb7af11b2a3017080/images/391f91e8-7a=
+ce-7c64-819b-b52cf2b57c3d.png" alt=3D"" width=3D"168" height=3D"auto" styl=
+e=3D"display:block;max-width:168px;width:168px;height:auto"/></span></a>
+<![endif]-->
+</div></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-ri=
+ght:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gu=
+tterContainerId-18"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"100%" style=3D"border-collapse:separate" role=3D"presentation">=
+<tbody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;pad=
+ding-left:0;border:0;border-radius:0" valign=3D"top" align=3D"center" id=
+=3D"b18"><table width=3D"100%" style=3D"border:0;background-color:transpar=
+ent;border-radius:0;border-collapse:separate"><tbody><tr><td style=3D"padd=
+ing-left:24px;padding-right:24px;padding-top:0;padding-bottom:16px" class=
+=3D"mceTextBlockContainer"><div data-block-id=3D"18" class=3D"mceText" id=
+=3D"d18" style=3D"display:inline-block;width:100%"><p>Lowering=C2=A0the=C2=
+=A0hurdles=C2=A0of=C2=A0data-driven=C2=A0investment decisions. <a href=3D"=
+https://cryptoquant.us4.list-manage.com/track/click?u=3D194ac041bb7af11b2a=
+3017080&id=3D0e1ead544d&e=3D5b5cc37f4b" target=3D"_blank">Explore our web=
+site</a><br><br><a href=3D"https://cryptoquant.us4.list-manage.com/profile=
+?u=3D194ac041bb7af11b2a3017080&id=3Da30940cf31&e=3D5b5cc37f4b&c=3D51af43e758=
+" style=3D"text-decoration-color: #72717D;"><span style=3D"color:#72717D;"=
+>Update your preferences</span></a><span style=3D"color:#72717D;"> or </sp=
+an><a href=3D"https://cryptoquant.us4.list-manage.com/unsubscribe?u=3D194a=
+c041bb7af11b2a3017080&id=3Da30940cf31&t=3Db&e=3D5b5cc37f4b&c=3D51af43e758" s=
+tyle=3D"text-decoration-color: #72717D;"><span style=3D"color:#72717D;">Un=
+subscribe</span></a></p><p class=3D"last-child"><br><span style=3D"color:#=
+72717D;"><span style=3D"font-size: 14px">=C2=A9 Team CQ=2C Inc. All rights=
+ reserved</span></span><br> <span style=3D"color:#72717D;"><span style=3D"=
+font-size: 14px">Team CQ=2C Inc &middot; 30 Wall St Fl 8 &middot; New York=
+=2C NY 10005-2205 &middot; USA</span></span><br></p></div></td></tr></tbod=
+y></table></td></tr></tbody></table></td></tr><tr><td style=3D"border:0;bo=
+rder-radius:0" valign=3D"top" class=3D"mceLayoutContainer" align=3D"center=
+" id=3D"b-2"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" width=3D"100%" role=3D"presentation" data-block-id=3D"-2"><tbo=
+dy><tr class=3D"mceRow"><td style=3D"background-position:center;background=
+-repeat:no-repeat;background-size:cover;padding-top:0px;padding-bottom:0px=
+" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"24"=
+ width=3D"100%" role=3D"presentation"><tbody></tbody></table></td></tr></t=
+body></table></td></tr></tbody></table></td></tr></tbody></table></td></tr=
+></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td>=
+</tr></tbody></table></td></tr></tbody></table><!--[if (gte mso 9)|(IE)]>=
+</td></tr></table><![endif]--></td></tr></tbody></table>
+</td>
+</tr>
+</tbody></table>
+</center>
+</body></html>
+--_----------=_MCPart_1464743364--
